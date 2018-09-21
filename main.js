@@ -58,10 +58,6 @@ const render = function (dt = null) {
     }
   }
 
-  if ( dateList[ dateList.length - 1 ].length === 0 ) {
-    dateList.splice( dateList.length - 1, 1)
-  }
-
   let nextMonthDates = []
   if ( dateList[ dateList.length - 1 ].length !== 7 ) {
     for (let i = 0; i < (7 - dateList[ dateList.length - 1 ].length) ; i++) {
