@@ -48,12 +48,13 @@ const render = function (dt = null) {
         let prevMonth = getDaysInMonth(dt.getMonth() + 1, dt.getFullYear())
         dateList[ week ].push(new Date(dt.getFullYear(), dt.getMonth() - 1, prevMonth - emptyDate))
       }
+      dateList[ week ].push( newDate )
+    } else {
+      dateList[ week ].push( newDate )
     }
 
     if (dateList[ week ].length === 7) {
       week++
-    } else {
-      dateList[ week ].push( newDate )
     }
   }
 
