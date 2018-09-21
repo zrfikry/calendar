@@ -15,9 +15,8 @@ body {
   display: inline-block;
   padding: 1rem;
   border: 1px solid;
-  min-width: 3vw;
-  max-width: 3vw;
-  font-size: .5rem;
+  min-width: 4vw;
+  max-width: 4vw;
   text-align: center;
 }
 
@@ -27,4 +26,10 @@ body {
 
 .days-header .box {
   border: none;
+}
+
+@media screen and (max-width: 768px) {
+  .box {
+    font-size: .5rem;
+  }
 }
