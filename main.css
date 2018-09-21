@@ -1,0 +1,27 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.wrapper {
+  display: flex;
+}
+
+.wrapper.week-list {
+  flex-direction: column;
+}
+
+.box {
+  display: inline-block;
+  padding: 1rem;
+  border: 1px solid;
+  min-width: 5vw;
+  text-align: center;
+}
+
+.box.off {
+  background: #ddd;
+}
+
+.days-header .box {
+  border: none;
+}

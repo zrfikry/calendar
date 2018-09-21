@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Calendar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <form id="dateNav" onsubmit="changeDate(event)">
+    <select name="month" id="monthSelect"></select>
+    <input type="number" id="yearInput" min="1970" value="2018">
+    <button>Submit</button>
+  </form>
+  <section id="calendarHeader" class="wrapper days-header">
+    <div class="box">Senin</div>
+    <div class="box">Selasa</div>
+    <div class="box">Rabu</div>
+    <div class="box">Kamis</div>
+    <div class="box">Jum'at</div>
+    <div class="box">Sabtu</div>
+    <div class="box">Minggu</div>
+  </section>
+  <section id="calendarBody" class="wrapper week-list"></section>
+</body>
+</html>
