@@ -29,7 +29,7 @@ const changeDate = function (event) {
   const selectedMonth = Number(document.querySelector('#monthSelect').value)
   const yearInput = Number(document.querySelector('#yearInput').value)
   dateList = []
-  render(new Date(yearInput, selectedMonth))
+  render(new Date(yearInput, selectedMonth, 1))
 }
 
 const render = function (dt = null) {
@@ -44,8 +44,8 @@ const render = function (dt = null) {
   for (let i = 0; i < daysInMonth; i++) {
     let newDate = new Date(dt.getFullYear(), dt.getMonth(), i + 1)
     if (i === 0) {
-      for (let emptyDate = newDate.getDay() - 1; emptyDate >= 0; emptyDate--) {
-        let prevMonth = getDaysInMonth(dt.getMonth(), dt.getFullYear())
+      for (let emptyDate = newDate.getDay() - 2; emptyDate >= 0; emptyDate--) {
+        let prevMonth = getDaysInMonth(dt.getMonth() + 1, dt.getFullYear())
         dateList[ week ].push(new Date(dt.getFullYear(), dt.getMonth() - 1, prevMonth - emptyDate))
       }
     }
@@ -57,9 +57,13 @@ const render = function (dt = null) {
     }
   }
 
+  if ( dateList[ dateList.length - 1 ].length === 0 ) {
+    dateList.splice( dateList.length - 1, 1)
+  }
+
   let nextMonthDates = []
-  if ( dateList[ dateList.length - 1 ].length < 7 ) {
-    for (let i = 0; i < dateList[ dateList.length - 1 ].length - 1; i++) {
+  if ( dateList[ dateList.length - 1 ].length !== 7 ) {
+    for (let i = 0; i < (7 - dateList[ dateList.length - 1 ].length) ; i++) {
       nextMonthDates.push(new Date(dt.getFullYear(), dt.getMonth() + 1, i + 1))
     }
   }
